@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { useFetching } from '../components/hooks/useFetching';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPostById, fetchCommentsByPostId } from '../store/postSlice';
+import { fetchPostById, fetchCommentsByPostId } from '../store/PostIdPageSlice';
 import Loader from '../components/UI/Loader/Loader';
 
 

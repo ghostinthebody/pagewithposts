@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import fetchingReducer from './postSlice';
+import fetchingReducer from './PostIdPageSlice';
+import { LoginReducer } from '../Pages/Login/slice/LoginSlice'
+import { PostReducer } from '../Pages/Posts/slice/PostSlice';
 // import postIdPageReducer from './postIdPageReducer';
 // import loginReducer from './loginReducer';
 // import postsReducer from './postsReducer';
@@ -7,6 +9,8 @@ import fetchingReducer from './postSlice';
 export default configureStore({
   reducer: {
     fetching: fetchingReducer,
+    login: LoginReducer,
+    post: PostReducer,
     // postsIdPage: postIdPageReducer,
     // login: loginReducer,
     // posts: postsReducer,

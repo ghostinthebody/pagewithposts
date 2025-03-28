@@ -27,7 +27,7 @@ export const fetchCommentsByPostId = createAsyncThunk(
   }
 );
 
-const postSlice = createSlice({
+const PostIdPageSlice = createSlice({
   name: 'post',
   initialState: {
     post: {},
@@ -74,5 +74,5 @@ const postSlice = createSlice({
   },
 });
 
-export const madly = postSlice.actions;
-export default postSlice.reducer;
+export const madly = PostIdPageSlice.actions;
+export default PostIdPageSlice.reducer;

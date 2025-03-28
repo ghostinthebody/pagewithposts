@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import About from "../Pages/About"
-import Posts from "../Pages/Posts"
+import Posts from "../Pages/Posts/Posts"
+import OLDPosts from "../Pages/OLDPosts"
 import Error from "../Pages/Error"
 import PostIdPage from '../Pages/PostIdPage';
-import Login from '../Pages/Login';
+import Login from '../Pages/Login/Login';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import { AuthContext } from '../context';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { routes } from '../router/routes';
 
 
 const AppRouter = () => {
-    const {isAuth, setIsAuth} = useContext(AuthContext)
+    
+    const isAuth = useSelector((state) => state.login.isAuth)
     console.log(isAuth)
     return (
         isAuth
@@ -27,6 +29,7 @@ const AppRouter = () => {
                 )} */}
                 <Route path="about" element={<About />} />
                 <Route path="posts" element={<Posts />} />
+                <Route path="OLDposts" element={<OLDPosts />} />
                 <Route path="posts/:id" element={<PostIdPage />} />
                 <Route path="error" element={<Error />} /> 
                 <Route path="*" element={<Error />}/>

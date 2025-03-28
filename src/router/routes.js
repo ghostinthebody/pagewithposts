@@ -1,5 +1,5 @@
 import About from "../Pages/About";
-import Posts from "../Pages/Posts";
+import Posts from "../Pages/Posts/Posts";
 import PostIdPage from "../Pages/PostIdPage";
 
 
