@@ -1,54 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom';
-import { useFetching } from '../components/hooks/useFetching';
-import PostService from '../API/PostService';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+// import { useFetching } from '../components/hooks/useFetching';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPostById, fetchCommentsByPostId } from '../store/postSlice';
 import Loader from '../components/UI/Loader/Loader';
 
+
 const PostIdPage = () => {
-    const params = useParams()
-    // useParams вытаскивает id. Но почему только id. И откуда он тащит(ну я то нажал на конкретный пост. Но как он понял?)
-    console.log(params)
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const {
+    post,
+    comments,
+    isPostLoading,
+    postError,
+    isCommentsLoading,
+    commentsError,
+  } = useSelector((state) => state.fetching);
 
-    const [post, setPost] = useState({});
-    const [comments, setComments] = useState([]);
+  useEffect(() => {
+    dispatch(fetchPostById(id));
+    dispatch(fetchCommentsByPostId(id));
+  }, [dispatch, id]);
 
-    const [fetchPostById, isLoading, error] = useFetching( async (id) => {
-        const response = await PostService.getById(id)
-        setPost(response.data)
-    })
-    const [fetchComments, isComLoading, comError] = useFetching( async (id) => {
-        const response = await PostService.getCommentsByPostId(id)
-        setComments(response.data)
-    })
-
-    useEffect(() => {
-        fetchPostById(params.id)
-        fetchComments(params.id)
-    }, [])
-
-    return (
+  return (
+    <div>
+      <h1>Страница конкретного поста с ID = {id}</h1>
+      {isPostLoading ? (
+        <Loader />
+      ) : postError ? (
+        <div>Error: {postError}</div>
+      ) : (
         <div>
-            <h1>Страница конкретного поста с ID = {params.id}</h1>
-            {isLoading
-                ? <Loader/>
-                : <div>{post.id}. {post.title}</div>
-            }
-            <h1>
-                Комментарии
-            </h1>
-            {isComLoading
-                ? <Loader/>
-                : <div>
-                    {comments.map(comm =>
-                        <div style={{marginTop: 15}}>
-                            <h5>{comm.email}</h5>
-                            <div>{comm.body}</div>
-                        </div>
-                    )}
-                </div>
-            }
+          {post.id}. {post.title}
         </div>
-    );
+      )}
+      <h1>Комментарии</h1>
+      {isCommentsLoading ? (
+        <Loader />
+      ) : commentsError ? (
+        <div>Error: {commentsError}</div>
+      ) : (
+        <div>
+          {comments.map((comm) => (
+            <div key={comm.id} style={{ marginTop: 15 }}>
+              <h5>{comm.email}</h5>
+              <div>{comm.body}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default PostIdPage;
