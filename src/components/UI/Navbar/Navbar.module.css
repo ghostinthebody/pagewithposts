@@ -1,0 +1,13 @@
+.navLink {
+    text-decoration: none;
+    color: teal;
+    padding: 8px 16px;
+    transition: color 0.3s;
+    border: 1px solid teal;
+    cursor: pointer;
+}
+
+.navLink:hover {
+    background-color: teal;
+    color: white;
+}

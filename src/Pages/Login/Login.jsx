@@ -3,13 +3,12 @@ import MyInput from '../../components/UI/input/MyInput';
 import MyButton from '../../components/UI/button/MyButton';
 import { useDispatch } from 'react-redux';
 import { LoginActions } from './slice/LoginSlice';
-// import { AuthContext } from '../../context';
+
 
 const Login = () => {
     const dispatch = useDispatch();
     const { setIsAuth } = LoginActions;
 
-    // const {isAuth, setIsAuth} = useContext(AuthContext)
     const login = event => {
         event.preventDefault();
         dispatch(setIsAuth(true));

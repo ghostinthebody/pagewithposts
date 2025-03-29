@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom"
-import { AuthContext } from '../../../context';
 import MyButton from '../button/MyButton';
+import { useSelector, useDispatch } from 'react-redux';
+import { LoginActions } from '../../../Pages/Login/slice/LoginSlice';
+import classes from './Navbar.module.css'
 
 const Navbar = () => {
+    const dispatch = useDispatch();
+    const { setIsAuth } = LoginActions;
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
 
     const logout = () => {
-        setIsAuth(false);
+        dispatch(setIsAuth(false));
         localStorage.removeItem('auth')
     }
 
@@ -18,9 +21,9 @@ const Navbar = () => {
                 Выйти
             </MyButton>
             <div className="navbar__links">
-                <Link to="/about">О сайте </Link>
-                <Link to="/posts">Посты </Link>
-                <Link to="/OLDposts">К_старым_постам </Link>
+                <Link to="/about" className={classes.navLink}>О сайте</Link>
+                <Link to="/posts" className={classes.navLink}>Посты</Link>
+                <Link to="/OLDposts" className={classes.navLink}>К старым постам</Link>
             </div>
         </div>
     );
