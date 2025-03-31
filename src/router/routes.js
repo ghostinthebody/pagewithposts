@@ -1,6 +1,6 @@
 import About from "../Pages/About";
-import Posts from "../Pages/Posts/Posts";
-import PostIdPage from "../Pages/PostIdPage";
+import { Posts } from "../Pages/Posts/Posts";
+import { PostIdPage } from "../Pages/PostIdPage/PostIdPage";
 
 
 export const routes = [

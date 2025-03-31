@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import MyInput from '../../components/UI/input/MyInput';
 import MyButton from '../../components/UI/button/MyButton';
 import { useDispatch } from 'react-redux';
@@ -27,4 +27,5 @@ const Login = () => {
     );
 };
 
-export default Login;
+
+export { Login };

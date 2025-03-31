@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { useFetching } from '../components/hooks/useFetching';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPostById, fetchCommentsByPostId } from '../store/PostIdPageSlice';
-import Loader from '../components/UI/Loader/Loader';
+import { fetchPostById, fetchCommentsByPostId } from './slice/PostIdPageSlice';
+import Loader from '../../components/UI/Loader/Loader';
 
 
 const PostIdPage = () => {
@@ -16,7 +15,7 @@ const PostIdPage = () => {
     postError,
     isCommentsLoading,
     commentsError,
-  } = useSelector((state) => state.fetching);
+  } = useSelector((state) => state.postIdPage);
 
   useEffect(() => {
     dispatch(fetchPostById(id));
@@ -54,4 +53,4 @@ const PostIdPage = () => {
   );
 };
 
-export default PostIdPage;
+export { PostIdPage };

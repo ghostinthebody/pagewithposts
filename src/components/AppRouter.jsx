@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import About from "../Pages/About"
-import Posts from "../Pages/Posts/Posts"
-import OLDPosts from "../Pages/OLDPosts"
+import { Posts } from "../Pages/Posts/Posts"
+import { OLDPosts } from "../Pages/OLDPost/OLDPosts"
 import Error from "../Pages/Error"
-import PostIdPage from '../Pages/PostIdPage';
-import Login from '../Pages/Login/Login';
+// import { Post}
+import { PostIdPage } from '../Pages/PostIdPage/PostIdPage';
+import { Login } from '../Pages/Login/Login';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 

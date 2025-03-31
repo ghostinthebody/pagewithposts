@@ -23,4 +23,4 @@ const PostFilter = ({filter, setFilter}) => {
     );
 };
 
-export default PostFilter;
+export { PostFilter };

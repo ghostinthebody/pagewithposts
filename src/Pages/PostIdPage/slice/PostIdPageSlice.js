@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import PostService from '../API/PostService'; // Предполагаю, что сервис у вас уже есть
+import PostService from '../../../API/PostService'; // Предполагаю, что сервис у вас уже есть
 
 // Thunk для получения поста по ID
 export const fetchPostById = createAsyncThunk(
@@ -74,5 +74,4 @@ const PostIdPageSlice = createSlice({
   },
 });
 
-export const madly = PostIdPageSlice.actions;
-export default PostIdPageSlice.reducer;
+export const { reducer: PostIdPageReducer, actions: PostIdPageActions } = PostIdPageSlice;
