@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from "react-router-dom"
-import MyButton from '../button/MyButton';
+import { MyButton } from '../button/MyButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { LoginActions } from '../../../Pages/Login/slice/LoginSlice';
 import classes from './Navbar.module.css'
@@ -24,9 +24,10 @@ const Navbar = () => {
                 <Link to="/about" className={classes.navLink}>О сайте</Link>
                 <Link to="/posts" className={classes.navLink}>Посты</Link>
                 <Link to="/OLDposts" className={classes.navLink}>К старым постам</Link>
+                <Link to="/todoList" className={classes.navLink}>Список дел</Link>
             </div>
         </div>
     );
 };
 
-export default Navbar;
+export { Navbar };

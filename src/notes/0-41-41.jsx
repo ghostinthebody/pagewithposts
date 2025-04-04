@@ -1,6 +1,6 @@
 import React, {useState} from "react"
-// import Counter from "./components/Counter"
-// import ClassCounter from "./components/ClassCounter"
+// import { Counter } from "./components/Counter"
+// import { ClassCounter } from "./components/ClassCounter"
 // import PostItem from "./components/PostItem"
 import PostList from "./components/PostList"
 import './styles/App.css'

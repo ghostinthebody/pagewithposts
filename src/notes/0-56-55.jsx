@@ -1,11 +1,11 @@
 import React, {useState} from "react"
-// import Counter from "./components/Counter"
-// import ClassCounter from "./components/ClassCounter"
+// import { Counter } from "./components/Counter"
+// import { ClassCounter } from "./components/ClassCounter"
 // import PostItem from "./components/PostItem"
 import PostList from "./components/PostList"
 import './styles/App.css'
-import MyButton from "./components/UI/button/MyButton"
-import MyInput from "./components/UI/input/MyInput"
+import {MyButton} from "./components/UI/button/MyButton"
+import {MyInput} from "./components/UI/input/MyInput"
 
 export const App = () => {
     const [posts, setPosts] = useState([

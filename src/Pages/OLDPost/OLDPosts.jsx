@@ -1,16 +1,16 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import MyModal from '../../components/UI/modal/MyModal';
-import MyButton from '../../components/UI/button/MyButton';
-import Loader from '../../components/UI/Loader/Loader';
-import PostList from '../../components/PostList';
-import PostForm from '../../components/PostForm';
+import { MyModal } from '../../components/UI/modal/MyModal';
+import { MyButton } from '../../components/UI/button/MyButton';
+import { Loader } from '../../components/UI/Loader/Loader';
+import { PostList } from '../../components/PostList';
+import { PostForm } from '../../components/PostForm';
 import { PostFilter } from '../../components/PostFilter';
 import '../../styles/App.css';
 import { usePosts } from '../../components/hooks/usePosts';
 import PostService from '../../API/PostService';
 import { useFetching } from '../../components/hooks/useFetching';
 import { getPagesArray, getPagesCount } from '../../utils/pages';
-import Pagination from '../../components/UI/pagination/Pagination';
+import { Pagination } from '../../components/UI/pagination/Pagination';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { OLDPostsActions } from './slice/OLDPostsSlice';

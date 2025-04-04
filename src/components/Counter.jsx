@@ -22,7 +22,7 @@ const Counter = function () {
 }
 
 // в App закидываем компонент через импорт
-// import Counter from "./components/Counter"
+// import { Counter } from "./components/Counter"
 
 // можем сколько угодно и где угодно вставлять данный функционал (счётчики независимы друг от друга)
 // вопрос. А если я хочу в 2х местах мочь изменять count? Я добавлю ещё 2е button но мне нужно будет их разместить в другом меске. А как?
@@ -31,4 +31,4 @@ const Counter = function () {
 // <Counter/>
 
 
-export default Counter;
+export { Counter };

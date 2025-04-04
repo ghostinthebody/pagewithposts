@@ -1,5 +1,5 @@
 import React from 'react';
-import PostItem from './PostItem';
+import { PostItem } from './PostItem';
 // import {TransitionGroup, CSSTransition} from 'react-transition-group'            // ниииииииииииииииииииии работаааааааааааааааааааает!
 
 // нужно для разных key Потому что у меня Post и OLDPosts вместе отрисовывают посты
@@ -36,4 +36,4 @@ const PostList = ({posts, title, remove}) => {
     );
 };
 
-export default PostList;
+export { PostList };

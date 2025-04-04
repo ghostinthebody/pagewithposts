@@ -23,4 +23,4 @@ const AppRouter = () => {
   // он ещё прописывал key всем путям. У меня ошибок таких - нет. Видимо из за Routes
 };
 
-export default AppRouter;
+export { AppRouter };

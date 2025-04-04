@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPostById, fetchCommentsByPostId } from './slice/PostIdPageSlice';
-import Loader from '../../components/UI/Loader/Loader';
+import { Loader } from '../../components/UI/Loader/Loader';
 
 
 const PostIdPage = () => {

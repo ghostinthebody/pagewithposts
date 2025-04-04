@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from './UI/button/MyButton';
+import { MyButton } from './UI/button/MyButton';
 import {useNavigate} from 'react-router-dom';
 
 // компонент может принемать в себя некоторые входные данные. (в контексте реакта - props)
@@ -30,4 +30,4 @@ const PostItem = (props) => {
     );
 };
 
-export default PostItem;
+export { PostItem };

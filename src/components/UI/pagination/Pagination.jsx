@@ -22,4 +22,4 @@ const Pagination = ({totalPages, page, changePage}) => {
     );
 };
 
-export default Pagination;
+export { Pagination };

@@ -1,17 +1,17 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import MyModal from '../../components/UI/modal/MyModal';
-import MyButton from '../../components/UI/button/MyButton';
-import Loader from '../../components/UI/Loader/Loader';
-import PostList from '../../components/PostList';
-import PostForm from '../../components/PostForm';
+import { MyModal } from '../../components/UI/modal/MyModal';
+import { MyButton } from '../../components/UI/button/MyButton';
+import { Loader } from '../../components/UI/Loader/Loader';
+import { PostList } from '../../components/PostList';
+import { PostForm } from '../../components/PostForm';
 import { PostFilter } from '../../components/PostFilter';
 import '../../styles/App.css';
 import { usePosts } from '../../components/hooks/usePosts';
 import PostService from '../../API/PostService';
 import { getPagesArray, getPagesCount } from '../../utils/pages';
-import Pagination from '../../components/UI/pagination/Pagination';
+import { Pagination } from '../../components/UI/pagination/Pagination';
 import { useObserver } from '../../components/hooks/useObserver';
-import MySelect from '../../components/UI/select/MySelect';
+import { MySelect } from '../../components/UI/select/MySelect';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { PostActions } from './slice/PostSlice';

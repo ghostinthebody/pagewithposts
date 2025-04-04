@@ -19,4 +19,4 @@ const MyModal = ({children, visible, setVisible}) => {
     );
 };
 
-export default MyModal;
+export { MyModal };

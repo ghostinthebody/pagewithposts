@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import PostList from "./components/PostList"
-import PostForm from "./components/PostForm"
+import { PostForm } from "./components/PostForm"
 import './styles/App.css'
 
 export const App = () => {
