@@ -1,8 +1,14 @@
 import React from 'react';
 import { MyInput } from './UI/input/MyInput';
 import { MySelect } from './UI/select/MySelect';
+import { Filter } from '../types';
 
-const PostFilter = ({filter, setFilter}) => {
+interface PostFilterProps  {
+    filter: Filter;
+    setFilter: (newFilter: Filter) => void;
+}
+
+const PostFilter: React.FC<PostFilterProps> = ({filter, setFilter}) => {
     return (
         <div>
             <MyInput
@@ -12,7 +18,7 @@ const PostFilter = ({filter, setFilter}) => {
             />
             <MySelect
                 value={filter.sort}
-                onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+                onChange={selectedSort => setFilter({...filter, sort: selectedSort.toString()})}
                 defaultValue="Сортировка"
                 options={[
                     {value: 'title', name: 'По названию'},

@@ -1,8 +1,16 @@
 import React, { useMemo } from 'react';
 import { useGetPagesArray } from '../../hooks/useGetPagesArray';
 
+// Определяем интерфейс для пропсов
+interface PaginationProps {
+    totalPages: number;
+    page: number;
+    changePage: (page: number) => void;
+  }
+
+
 // (´・＿・`) А хедеры в network (при запросе на сервер появляются) часто нужны? И вообще эта вкладка ******
-const Pagination = ({totalPages, page, changePage}) => {
+const Pagination: React.FC<PaginationProps> = ({totalPages, page, changePage}) => {
 
     const pagesArray = useGetPagesArray(totalPages)
 

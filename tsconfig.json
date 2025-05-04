@@ -14,6 +14,6 @@
       "noEmit": true,                     // Не генерировать JS файлы (если используете сборщик)
       "jsx": "react-jsx"                  // Поддержка JSX для React
     },
-    "include": ["src"],                   // Указать, какие файлы включать
+    "include": ["src", "css.d.ts"],                   // Указать, какие файлы включать
     "exclude": ["node_modules"]           // Исключить node_modules
   }

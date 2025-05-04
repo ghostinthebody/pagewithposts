@@ -1,9 +1,10 @@
 import React from 'react';
 import { MyButton } from './UI/button/MyButton';
 import {useNavigate} from 'react-router-dom';
+import { PostItemProps } from '../types';
 
 // компонент может принемать в себя некоторые входные данные. (в контексте реакта - props)
-const PostItem = (props) => {
+const PostItem = (props: PostItemProps) => {
     const router = useNavigate();
     // console.log("dodododooddo")
     // ну тут не понятно что в консоли отображается. В useHistory должен был быть объект со свойствами. И нам нужна функция push.  (В useNavigate такого - нет)

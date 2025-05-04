@@ -1,14 +1,19 @@
 import React, {useState} from 'react';
 import { MyInput } from './UI/input/MyInput';
 import { MyButton } from './UI/button/MyButton';
+import { Post } from '../types';
 
-const PostForm = ({create}) => {
+interface PostFormProps {
+    create: (newPost: Post) => void;
+}
+
+const PostForm: React.FC<PostFormProps> = ({create}) => {
     const [post, setPost] = useState({title: '', body: ''});
 
-    const addNewPost = (e) => {
+    const addNewPost = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         const newPost = {
-            ...post, id: Date.now()
+            ...post, userId: 1, id: Date.now()
         }
         create(newPost)
         setPost({title: '', body: ''});

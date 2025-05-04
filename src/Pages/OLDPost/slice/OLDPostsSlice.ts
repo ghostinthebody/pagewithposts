@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { PostsState } from '../../../types';
 
-const PostsSlice = createSlice({
-  name: 'posts',
-  initialState: {
+// Начальное состояние с явной типизацией
+const initialState: PostsState = {
     posts: [],
     filter: { sort: '', query: '' },
     modal: false,
@@ -11,7 +11,11 @@ const PostsSlice = createSlice({
     page: 1,
     isPostsLoading: false,
     postError: null,
-  },
+};
+
+const OLDPostsSlice = createSlice({
+  name: 'posts',
+  initialState,
   reducers: {
     setPosts: (state, action) => { state.posts = action.payload },
     addPosts: (state, action) => { state.posts = [...state.posts, ...action.payload] },
@@ -26,4 +30,4 @@ const PostsSlice = createSlice({
 });
 
 
-export const { reducer: PostReducer, actions: PostActions } = PostsSlice;
+export const { reducer: OLDPostsReducer, actions: OLDPostsActions } = OLDPostsSlice;

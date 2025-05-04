@@ -9,7 +9,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const { setIsAuth } = LoginActions;
 
-    const login = event => {
+    const login = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         dispatch(setIsAuth(true));
         localStorage.setItem('auth', 'true')
